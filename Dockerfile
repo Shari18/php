@@ -8,6 +8,7 @@ RUN apk -u add git
 
 # Install PHP extensions
 ADD install-php.sh /usr/sbin/install-php.sh
+RUN ["chmod", "+x", "/usr/sbin/install-php.sh"]
 RUN /usr/sbin/install-php.sh
 
 RUN mkdir -p /etc/ssl/certs && update-ca-certificates
